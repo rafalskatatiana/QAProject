@@ -112,11 +112,11 @@ class TestStartPage:
         assert successful_message.text == "Your feed displays the latest posts from the people you follow. If you don’t have any friends to follow that’s okay; you can use the “Search” feature in the top menu bar to find content written by people with similar interests and then follow them."
         self.log.info("Success message was verify")
         sleep(1)
-        # hello_message = driver.find_element(by=By.XPATH, value=".//h2")
-        # assert username_value.lower() in hello_message.text
-        # assert hello_message.text == f"Hello {username_value.lower()}, your feed is empty"
-        # assert driver.find_element(by=By.XPATH, value=".//strong").text == username_value.lower()
-        # self.log.info("Registration for user '%s' was succes and verified", username_value)
+        hello_message = driver.find_element(by=By.XPATH, value=".//h2")
+        assert username_value.lower() in hello_message.text
+        assert hello_message.text == f"Hello {username_value.lower()}, your feed is empty"
+        assert driver.find_element(by=By.XPATH, value=".//strong").text == username_value.lower()
+        self.log.info("Registration for user '%s' was succes and verified", username_value)
 
         # Check user is routed to login page
         current_url = driver.current_url
