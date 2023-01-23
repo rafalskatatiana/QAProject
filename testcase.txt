@@ -16,10 +16,10 @@
  - Click on the button Sing In                                       (.//button[text()='Sign In'])
  - Verify username                                                   (.//h2)
 
-3.  Check notifications for regastratio fields if all fields are empty:
+3.  Check notifications for regastration fields if all fields are empty:
  Steps:
  - Don't fill any fields for  regastration
- - Click on the button Sing Up                                        (.//input[@placeholder='Create a password'])
+ - Click on the button Sing Up                                        (.//button[text()='Sign up for OurApp'])
  - Verify error message for  field Username                           (".//div[@class='alert alert-danger small liveValidateMessage liveValidateMessage--visible'] [contains(text(),'Username must be at least 3 characters.')]")
  - Verify error message for  field Email                              (".//div[@class='alert alert-danger small liveValidateMessage liveValidateMessage--visible'] [contains(text(),'You must provide a valid email address..')]")
  - Verify error message for  field Password                           (".//div[@class='alert alert-danger small liveValidateMessage liveValidateMessage--visible'] [contains(text(),'Password must be at least 12 characters.')]")
