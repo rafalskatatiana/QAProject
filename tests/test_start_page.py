@@ -62,9 +62,9 @@ class TestStartPage:
         start_page.sign_up(username=username_value, email=email_value, password="")
         self.log.info("User was not register")
 
-        # # Verify register success
-        # start_page.verify_sing_up_error()
-        # self.log.info("Password must be at least 12 characters.")
+        # Verify error
+        start_page.verify_sing_up_error()
+        self.log.info("Password must be at least 12 characters.")
 
     def test_register(self, start_page):
         """
@@ -85,5 +85,6 @@ class TestStartPage:
         self.log.info("User was register")
 
         # Verify register success
-        hello_page.verify_success_sing_up_massage(username=username_value)
+
+        hello_page.verify_sign_up_message(username=username_value)
         self.log.info("Registration for user '%s' was success and verified", username_value)
