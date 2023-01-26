@@ -2,3 +2,6 @@ class BaseConstants:  # выносим все универсальные кон�
 
     DRIVER_PATH = "../drivers/chromedriver.exe"
     URL = "https://qa-complexapp.onrender.com"
+
+    FIREFOX = "firefox"
+    CHROME = "chrome"
