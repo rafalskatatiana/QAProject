@@ -14,7 +14,7 @@ class TestCreatePostPage:
 
     @pytest.fixture()
     def create_post_page(self, start_page, random_user):
-        """-
+        """
         - Steps:
             - Sign Up a user
             - Navigate to create post page

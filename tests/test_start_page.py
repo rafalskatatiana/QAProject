@@ -4,6 +4,7 @@ import logging
 import pytest
 
 from constants.base import BaseConstants
+from pages import my_profile
 
 
 @pytest.mark.parametrize("browser", [BaseConstants.CHROME, BaseConstants.FIREFOX])
@@ -75,3 +76,25 @@ class TestStartPage:
         # Verify register success
 
         hello_page.verify_sign_up_message(random_user)
+
+    def test_log_out(self, start_page, random_user):
+        """
+                - Pre-conditions:
+                    - Open start page
+                    - Sign Up as the user
+                - Steps:
+                    - Click on Sign Out Button
+                    - Verify the result
+                """
+        hello_page = start_page.sign_up(random_user)
+        start_page = hello_page.header.sing_out()
+
+        # Verify button
+        start_page.verify_sign_in()
+
+    def test_verify_username(self, random_user, start_page):
+        """ Verify profile username"""
+
+        hello_page = start_page.sign_up(random_user)
+        hello_page.header.profile()
+        my_profile.verify_username()

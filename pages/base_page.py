@@ -7,7 +7,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 class BasePage:
     """"Descriptions base methods for the website"""  # методы записываем как один (заполнить поля, клики, верификация сообщений)
 
-    def __init__(self, driver):
+    def __init__(self, driver: object) -> object:
         self.driver = driver
         self.waiter = WebDriverWait(driver=driver, timeout=5)
 

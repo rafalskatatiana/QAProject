@@ -53,3 +53,8 @@ class StartPage(BasePage):  # привязываем к start_page_const
 
         from pages.hello_page import HelloPage
         return HelloPage(self.driver)  # так как после регистрации происходит редирект на новую страницу
+
+    @log_wrapper
+    def verify_sign_in(self):
+        """Click Sign out button until it's disappear"""
+        assert self.is_element_exists(self.const.SIGN_IN_BUTTON_XPATH), "Sign In button didn't exist"
