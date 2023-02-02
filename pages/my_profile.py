@@ -1,18 +1,17 @@
 from constants.my_profile import MyProfilePageConsts
 from pages.base_page import BasePage
 from pages.header import Header
+from pages.utils import log_wrapper
 
 
 class MyProfilePage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
-        self.header = Header(self.driver)
         self.const = MyProfilePageConsts
+        self.header = Header(self.driver)
 
-    def verify_username(self):
-        """Verify username"""
-        assert self.compare_element_text(xpath=self.const.VERIFY_USERNAME_XPATH, text=self.const.VERIFY_USERNAME_TEXT)
-
-
-def verify_username():
-    return None
+    @log_wrapper
+    def verify_profile_user_name(self, username):
+        """Verify username profile"""
+        assert self.compare_element_text(xpath=self.const.VERIFY_USERNAME_XPATH,
+                                         text=username.lower(), strip=True)

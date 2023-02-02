@@ -57,4 +57,4 @@ class StartPage(BasePage):  # привязываем к start_page_const
     @log_wrapper
     def verify_sign_in(self):
         """Click Sign out button until it's disappear"""
-        assert self.is_element_exists(self.const.SIGN_IN_BUTTON_XPATH), "Sign In button didn't exist"
+        assert self.is_element_exists(xpath=self.const.SIGN_IN_BUTTON_XPATH), "Sign In button didn't exist"

@@ -31,3 +31,16 @@ class Post:
 
     def __repr__(self):
         return f"Post:(title={self.title}"
+
+
+class Chat:
+
+    def __init__(self, random_message=""):
+        self.random_text = random_message
+
+    def fill_data(self):
+        """Fill post data by random text"""
+        self.random_text = random_text(10)
+
+    def __repr__(self):
+        return f"Post:(random_message={self.random_text}"

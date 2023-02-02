@@ -55,7 +55,7 @@ def log_wrapper(func):
     def wrapper(*args, **kwargs):
         log = logging.getLogger("[LogDecorator]")
         result = func(*args, **kwargs)
-        # log.info(f"{func.__doc__}; Args:{args}; Kwargs:{kwargs}")
+       # log.info(f"{func.__doc__}; Args:{args}; Kwargs:{kwargs}")
 
         log.info(func.__doc__)  # или упрощенный вариант
 

@@ -25,9 +25,14 @@ class Header(BasePage):
         from pages.start_page import StartPage
         return StartPage(self.driver)
 
-    def profile(self):
-        """"Navigate to profile """
-        self.click(xpath=self.const.MY_PROFILE_BUTTON_XPATH)
+    @log_wrapper
+    def navigate_to_profile_page(self, username):
+        """"Navigate to profile page """
+        self.click(xpath=self.const.MY_PROFILE_BUTTON_XPATH.format(username=username.lower()))
+        from pages.my_profile import MyProfilePage
+        return MyProfilePage(self.driver)
 
-        from pages.hello_page import HelloPage
-        return HelloPage(self.driver)
+    @log_wrapper
+    def open_chat(self):
+        """"Click on the icon chat """
+        self.click(xpath=self.const.CHAT_BUTTON_XPATH)
